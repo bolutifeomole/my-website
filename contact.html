@@ -5,6 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Bolutife Omole</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+      background-color: var(--bg-color);
+      font-family: 'Georgia', serif;
+    }
+
+    .contact-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .social-card {
+      background: var(--card-color);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s;
+      text-align: center;
+    }
+
+    .social-card:hover {
+      transform: scale(1.05);
+    }
+
+    .social-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .social-card h2 {
+      margin: 1rem 0 0.5rem;
+      color: var(--primary-color);
+    }
+
+    .social-card p {
+      margin: 0 1rem 1.5rem;
+      color: var(--text-color);
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -15,12 +67,34 @@
       <a href="contact.html">Contact</a>
     </nav>
   </header>
+
   <main>
-    <section>
-      <p>Email: <a href="bomole06@gmail.com">bomole06@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/bolutife-omole-382085361/" target="_blank">linkedin.com/in/bolutife-omole-382085361</a></p>
-      <p>GitHub: <a href="https://github.com/bolutifeomole" target="_blank">github.com/bolutifeomole</a></p>
-    </section>
+    <div class="contact-card-grid">
+      <div class="social-card" onclick="window.open('mailto:bomole06@gmail.com', '_blank')">
+        <img src="email-preview.jpg" alt="Email" />
+        <h2>Email</h2>
+        <p>Reach out to me directly via email.</p>
+      </div>
+      <div class="social-card" onclick="window.open('https://www.linkedin.com/in/bolutife-omole-382085361/', '_blank')">
+        <img src="linkedin-preview.jpg" alt="LinkedIn" />
+        <h2>LinkedIn</h2>
+        <p>Connect with me on LinkedIn for professional inquiries.</p>
+      </div>
+      <div class="social-card" onclick="window.open('https://github.com/bolutifeomole', '_blank')">
+        <img src="tuxedo.jpg" alt="GitHub" />
+        <h2>GitHub</h2>
+        <p>View my code and open-source projects on GitHub.</p>
+      </div>
+      <div class="social-card" onclick="window.open('https://www.instagram.com/bolu_omole/', '_blank')">
+        <img src="IMG_6075.JPG" alt="Instagram" />
+        <h2>Instagram</h2>
+        <p>View my code and open-source projects on GitHub.</p>
+      </div>
+    </div>
   </main>
+
+  <footer>
+    <p>© 2025 Bolutife Omole</p>
+  </footer>
 </body>
 </html>
