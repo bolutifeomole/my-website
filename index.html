@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
   <style>
     html {
       scroll-behavior: smooth;
@@ -220,15 +225,88 @@
 <body>
   <nav>
     <a href="#home">Home</a>
+    <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+
   </nav>
 
   <section id="home">
-    <h1>Hi, I'm Bolutife Omole</h1>
-    <p>Engineering student | Developer | Violinist | Sustainability Advocate</p>
+    <div class="home-content">
+      <div class="home-text">
+        <p>Hi, I am</p>
+        <h1>Bolutife Omole</h1>
+        <h2>EECS @ MIT</h2>
+        <p>I'm an engineering student at the Massachusetts Institute of Technology 
+          interested in renewable energy, web design, and artificial intelligence. 
+          I have experience in Python, HTML, JavaScript, amd Java, as well as the Node.js and React frameworks. 
+          I am interested in the future of engineering and software, and all that it has to 
+          offer in terms of improving the world as we know it.</p>
+
+        <div class="social-links-top">
+          <a href="mailto:bomole06@gmail.com" target="_blank" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/bolutife-omole-382085361/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/bolutifeomole" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.instagram.com/bolu_omole/" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="home-image">
+        <img src="IMG_1234.JPG" alt="Bolutife Omole" style="height: 75%; width: 75%;"/>
+      </div>
+    </div>
   </section>
+
+  <section class="experience-section" id="experience">
+    <h2>Experience</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <img class="timeline-logo" src="collegecrack-logo.png" alt="CollegeCrack Logo" />
+        <div class="timeline-content">
+          <h3>Lead Software Engineer & Founder</h3>
+          <p>CollegeCrack | 2025 – Present</p>
+          <ul>
+            <li>Developed an AI-powered platform using React, Node.js, and OpenAI API.</li>
+            <li>Implemented autosave, version history, submission, and AI-driven feedback.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <img class="timeline-logo" src="srt-logo.svg" alt="SRT Logo" />
+        <div class="timeline-content">
+          <h3>SRT Helpdesk Technical Support</h3>
+          <p>SRT Communications | 2024 – 2025</p>
+          <ul>
+            <li>Provided support for networking and connectivity issues.</li>
+            <li>Troubleshot SRT routers, access points, and ONTs.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <img class="timeline-logo" src="burgerking-logo.png" alt="Burger King Logo" />
+        <div class="timeline-content">
+          <h3>Team Member</h3>
+          <p>Burger King | 2021 – 2022</p>
+          <ul>
+            <li>Delivered fast-paced customer service ensuring satisfaction.</li>
+            <li>Maintained a clean, health-compliant workspace.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
 
   <section id="projects">
     <h2>Projects</h2>
@@ -238,47 +316,6 @@
     </ul>
   </section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m passionate about engineering, renewable energy, software, and education. From rebuilding recycling systems in my hometown to building essay coaching platforms, I bring ideas to life with impact and creativity.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>You can reach me through these platforms:</p>
-    <div class="contact-card-grid">
-      <div class="social-card" onclick="window.open('mailto:bomole06@gmail.com', '_blank')">
-        <img src="email-preview.jpg" alt="Email" />
-        <h3>Email</h3>
-        <p>bomole06@gmail.com</p>
-      </div>
-      <div class="social-card" onclick="window.open('https://www.linkedin.com/in/bolutife-omole-382085361/', '_blank')">
-        <img src="linkedin-preview.jpg" alt="LinkedIn" />
-        <h3>LinkedIn</h3>
-        <p>linkedin.com/in/bolutife-omole-382085361</p>
-      </div>
-      <div class="social-card" onclick="window.open('https://github.com/bolutifeomole', '_blank')">
-        <img src="github-preview.jpg" alt="GitHub" />
-        <h3>GitHub</h3>
-        <p>github.com/bolutifeomole</p>
-      </div>
-      <div class="social-card" onclick="window.open('https://www.instagram.com/bolu_omole/', '_blank')">
-        <img src="IMG_6075.JPG" alt="Instagram" />
-        <h3>Instagram</h3>
-        <p>@bolu_omole</p>
-      </div>
-    </div>
-
-    <div class="contact-form-wrapper">
-      <h2>Send Me a Message</h2>
-      <form onsubmit="handleFormSubmit(event)">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
 
   <footer>
     <p>© 2025 Bolutife Omole</p>
