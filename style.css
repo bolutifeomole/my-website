@@ -266,6 +266,7 @@ footer {
 }
 
 /* Experience Section */
+/* Experience Timeline Section with Cards */
 .experience-section {
   padding: 4rem 2rem;
   min-height: auto;
@@ -289,14 +290,16 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 65%;
+  width: 100%;
+  align-items: center;
 }
 
 .timeline-item {
+  width: 65%;
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  background-color: var(--bg-color);
+  background-color: #f0ebe0; /* slightly warmer contrast */
   border: 3px solid var(--border-color);
   border-radius: 12px;
   padding: 1.5rem;
@@ -314,7 +317,7 @@ footer {
   height: 48px;
   border-radius: 50%;
   object-fit: contain;
-  border: 2px solid var(--primary-color);
+  border: 0px solid var(--primary-color);
 }
 
 .timeline-content {
@@ -345,6 +348,7 @@ footer {
   font-size: 1rem;
   text-align: left;
 }
+
 
 
 #home {
