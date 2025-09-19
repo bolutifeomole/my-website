@@ -12,61 +12,29 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
 
-  <style>
-    :root{
-      --primary-color:#004225;        
-      --primary-hover:#0a5a32;
-      --bg-color:#FAF7F2;          
-      --card-color:#FFFFFF;          
-      --border-color:#E6E2DA;        
-      --text-color:#2B2B2B;
-      --muted:#6B6B6B;
-      --shadow:0 8px 24px rgba(0,0,0,.06);
-      --shadow-lg:0 12px 32px rgba(0,0,0,.10);
-      --radius:14px;
-      --container:1100px;
-    }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-
-    html,body{
-      scroll-behavior:smooth;
-      height:100%;
-      width:100%;
-      background:var(--bg-color);
-      color:var(--text-color);
-      font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      line-height:1.6;
-    }
-
-    nav{
-      position:fixed; inset:0 0 auto 0;
-      background:#fff;
-      padding:1rem 2rem;
-      display:flex; justify-content:center; gap:2rem;
-      z-index:999;
-      border-bottom:1px solid var(--border-color);
-      box-shadow:0 2px 6px rgba(0,0,0,.05);
-    }
-    nav a{
-      text-decoration:none; font-weight:600;
-      color:var(--primary-color);
-      transition:color .25s ease;
-    }
-    nav a:hover{ color:var(--primary-hover); }
-    
-  </style>
   
 </head>
 <body>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#education">Education</a>
-    <a href="#community">Community Service</a>
-    <a href="#achievements">Achievements</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
+  <nav class="site-nav" role="navigation" aria-label="Primary">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+      <span class="sr-only">Open menu</span>
+      <!-- simple hamburger icon -->
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <div id="nav-menu" class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#education">Education</a>
+      <a href="#community">Community Service</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+    </div>
   </nav>
+
 
   <section id="home">
     <div class="home-content">
@@ -104,8 +72,101 @@
     </div>
   </section>
 
-    
+  <section class="experience-section" id="experience">
+    <h2>Experience</h2>
+    <div class="timeline">
 
+      <div class="timeline-item">
+        <img class="timeline-logo" src="srt-logo.svg" alt="SRT Logo" />
+        <div class="timeline-content">
+          <h3>SRT Helpdesk Technical Support</h3>
+          <p>SRT Communications | 2024 – 2025</p>
+          <ul>
+            <li>Provided support for networking and connectivity issues.</li>
+            <li>Troubleshot SRT routers, access points, and ONTs.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <img class="timeline-logo" src="burgerking-logo.png" alt="Burger King Logo" />
+        <div class="timeline-content">
+          <h3>Team Member</h3>
+          <p>Burger King | 2021 – 2022</p>
+          <ul>
+            <li>Delivered fast-paced customer service ensuring satisfaction.</li>
+            <li>Maintained a clean, health-compliant workspace.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>    
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+
+      <div class="project-card">
+        <img src="stocksim.png" alt="Stock Simulator Screenshot" />
+        <div class="project-info">
+          <h3>Stock Simulator</h3>
+          <p>Developed a simple interactive stock market simulator in <strong>Python</strong> with <strong>matplotlib</strong> for visualization, <strong>pandas</strong> for data analysis, and the <strong>Yahoo Finance API</strong> for live and historical market data. Implemented technical indicators, virtual portfolios, and profit/loss tracking.</p>
+        </div>
+        <div class="project-overlay">
+          <div class="project-links">
+            <a href="https://github.com/bolutifeomole" target="_blank" class="btn">View Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="robottour.png" alt="Robot image" />
+        <div class="project-info">
+          <h3>Robot Tour</h3>
+          <p>Built a two‑wheeled robot with an <strong>Arduino Uno</strong>, <strong>DFRobot 6V 160 RPM motors</strong>, and an <strong>Adafruit Motor Shield</strong> on a 3D-printed frame created by Tektite. Wired and soldered components, and programmed motor control in <strong>C++</strong> to create a fully functioning robot.</p>
+          <p>Took inspiration from Tektite's robot tour kit. </p>
+        </div>
+        <div class="project-overlay">
+          <div class="project-links">
+            <a href="https://github.com/bolutifeomole" target="_blank" class="btn">View Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="portfolio.png" alt="Portfolio Image" />
+        <div class="project-info">
+          <h3>Personal Portfolio Website</h3>
+          <p>This website! A personal portfolio webpage built using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>.</p>
+        </div>
+        <div class="project-overlay">
+          <div class="project-links">
+            <a href="https://github.com/bolutifeomole" target="_blank" class="btn">View Code</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="skills-subsection">
+      <h3>Skills</h3>
+      <div class="skills-grid">
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">C++</span>
+        <span class="skill-tag">Arduino</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Soldering</span>
+        <span class="skill-tag">Computer Networking</span>
+        <span class="skill-tag">Public Speaking</span>
+        <span class="skill-tag">Team Leadership</span>
+        <span class="skill-tag">Violin</span>
+        <span class="skill-tag">Comptia Tech+ Certification</span>
+      </div>
+    </div>
+
+  </section>
 
   <section id="education" class="section">
     <h2>Education</h2>
@@ -164,44 +225,18 @@
           <div>
             <h4>Clubs</h4>
             <div class="pills">
-              <span class="pill">Coding Club (2023-2024)</span>
-              <span class="pill">Science Club (2021-2025)</span>
-              <span class="pill">Envirothon (2021-2025)</span>
-              <span class="pill">Science Bowl (2023-2025)</span>
-              <span class="pill">Orchestra (2021-2025)</span>
-              <span class="pill">DECA (2024-2025)</span>
-              <span class="pill">Student Council (2021-2025)</span>
-              <span class="pill">Theatre (2024)</span>
+              <span class="pill">Coding Club</span>
+              <span class="pill">Science Olympiad</span>
+              <span class="pill">Envirothon</span>
+              <span class="pill">Science Bowl</span>
+              <span class="pill">Orchestra</span>
+              <span class="pill">DECA</span>
+              <span class="pill">FBLA</span>
+              <span class="pill">Student Council</span>
+              <span class="pill">Theatre</span>
             </div>
           </div>
         </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="community" class="section">
-    <h2>Community Service</h2>
-    <div class="section-container">
-
-      <div class="section-card">
-        <div class="item-head">
-          <h3>Greener Tomorrow — Volunteer</h3>
-          <span class="item-meta">Minot, ND</span>
-        </div>
-        <ul class="clean-list">
-          <li>Collaborated with fellow students; Organized volunteer efforts to clean up public spaces; promoted sustainability education and inspired students to take action for a sustainable future.</li>
-        </ul>
-      </div>
-
-      <div class="section-card">
-        <div class="item-head">
-          <h3>Minot Public Schools Orchestra — Volunteer</h3>
-          <span class="item-meta">Minot, ND</span>
-        </div>
-        <ul class="clean-list">
-          <li>Volunteered for various events: setting up/clearing concert stages, volunteered for youth orchestra solo day event. Sigining in students, helping students prepare and tune instruments.</li>
-        </ul>
       </div>
 
     </div>
@@ -275,111 +310,39 @@
 
   </section>
 
+  <section id="community" class="section">
+    <h2>Community Service</h2>
+    <div class="section-container">
 
-
-
-  <section class="experience-section" id="experience">
-    <h2>Experience</h2>
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <img class="timeline-logo" src="srt-logo.svg" alt="SRT Logo" />
-        <div class="timeline-content">
-          <h3>SRT Helpdesk Technical Support</h3>
-          <p>SRT Communications | 2024 – 2025</p>
-          <ul>
-            <li>Provided support for networking and connectivity issues.</li>
-            <li>Troubleshot SRT routers, access points, and ONTs.</li>
-          </ul>
+      <div class="section-card">
+        <div class="item-head">
+          <h3>Greener Tomorrow — Volunteer</h3>
+          <span class="item-meta">Minot, ND</span>
         </div>
+        <ul class="clean-list">
+          <li>Collaborated with fellow students; Organized volunteer efforts to clean up public spaces; promoted sustainability education and inspired students to take action for a sustainable future.</li>
+        </ul>
       </div>
 
-      <div class="timeline-item">
-        <img class="timeline-logo" src="burgerking-logo.png" alt="Burger King Logo" />
-        <div class="timeline-content">
-          <h3>Team Member</h3>
-          <p>Burger King | 2021 – 2022</p>
-          <ul>
-            <li>Delivered fast-paced customer service ensuring satisfaction.</li>
-            <li>Maintained a clean, health-compliant workspace.</li>
-          </ul>
+      <div class="section-card">
+        <div class="item-head">
+          <h3>Minot Public Schools Orchestra — Volunteer</h3>
+          <span class="item-meta">Minot, ND</span>
         </div>
+        <ul class="clean-list">
+          <li>Volunteered for various events: setting up/clearing concert stages, volunteered for youth orchestra solo day event. Sigining in students, helping students prepare and tune instruments.</li>
+        </ul>
       </div>
 
     </div>
   </section>
 
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-
-      <div class="project-card">
-        <img src="stocksim.png" alt="Stock Simulator Screenshot" />
-        <div class="project-info">
-          <h3>Stock Simulator</h3>
-          <p>Developed a simple interactive stock market simulator in <strong>Python</strong> with <strong>matplotlib</strong> for visualization, <strong>pandas</strong> for data analysis, and the <strong>Yahoo Finance API</strong> for live and historical market data. Implemented technical indicators, virtual portfolios, and profit/loss tracking.</p>
-        </div>
-        <div class="project-overlay">
-          <div class="project-links">
-            <a href="https://github.com/bolutifeomole" target="_blank" class="btn">View Code</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <img src="robottour.png" alt="Robot image" />
-        <div class="project-info">
-          <h3>Robot Tour</h3>
-          <p>Built a two‑wheeled robot with an <strong>Arduino Uno</strong>, <strong>DFRobot 6V 160 RPM motors</strong>, and an <strong>Adafruit Motor Shield</strong> on a 3D-printed frame created by Tektite. Wired and soldered components, and programmed motor control in <strong>C++</strong> to create a fully functioning robot.</p>
-          <p>Took inspiration from Tektite's robot tour kit. </p>
-        </div>
-        <div class="project-overlay">
-          <div class="project-links">
-            <a href="https://github.com/bolutifeomole" target="_blank" class="btn">View Code</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <img src="portfolio.png" alt="Portfolio Image" />
-        <div class="project-info">
-          <h3>Personal Portfolio Website</h3>
-          <p>This website! A personal portfolio webpage built using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>.</p>
-        </div>
-        <div class="project-overlay">
-          <div class="project-links">
-            <a href="https://github.com/bolutifeomole" target="_blank" class="btn">View Code</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="skills-subsection">
-      <h3>Skills</h3>
-      <div class="skills-grid">
-        <span class="skill-tag">HTML</span>
-        <span class="skill-tag">CSS</span>
-        <span class="skill-tag">JavaScript</span>
-        <span class="skill-tag">C++</span>
-        <span class="skill-tag">Arduino</span>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">Soldering</span>
-        <span class="skill-tag">Computer Networking</span>
-        <span class="skill-tag">Public Speaking</span>
-        <span class="skill-tag">Team Leadership</span>
-        <span class="skill-tag">Violin</span>
-        <span class="skill-tag">Comptia Tech+ Certification</span>
-      </div>
-    </div>
-
-  </section>
 
   <footer>
     <p>© 2025 Bolutife Omole</p>
   </footer>
 
+  <script src="script.js" defer></script>
   <script>
     function handleFormSubmit(e) {
       e.preventDefault();
@@ -397,5 +360,7 @@
       }, 1000);
     }
   </script>
+
+
 </body>
 </html>
