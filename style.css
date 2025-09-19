@@ -490,3 +490,6 @@ nav{
 @media (prefers-reduced-motion: reduce){
   .site-nav, .nav-toggle, .nav-links, .nav-links a{ transition:none!important; }
 }
+
+html, body { overflow-x: hidden; }
+section { max-width: 100vw; }
