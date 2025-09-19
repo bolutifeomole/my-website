@@ -2,154 +2,155 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
   <title>Bolutife Omole</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-
-  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="site-nav" role="navigation" aria-label="Primary">
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
-      <span class="sr-only">Open menu</span>
-      <!-- simple hamburger icon -->
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </button>
+  <!-- Scroll progress -->
+  <div id="scroll-progress" aria-hidden="true"></div>
 
-    <div id="nav-menu" class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#education">Education</a>
-      <a href="#community">Community Service</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
+  <!-- Desktop header (hidden on mobile) -->
+  <nav class="site-nav" role="navigation" aria-label="Primary">
+    <a class="brand" href="#home" aria-label="Go to top">
+      <span class="brand-mark">BO</span><span class="dot" aria-hidden="true"></span>
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="#home">Home</a>
+      <a class="nav-link" href="#experience">Experience</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#education">Education</a>
+      <a class="nav-link" href="#achievements">Achievements</a>
+      <a class="nav-link" href="#community">Community</a>
+
+
     </div>
   </nav>
 
-
-  <section id="home">
+  <!-- Hero -->
+  <section id="home" class="reveal">
     <div class="home-content">
       <div class="home-text">
-        <p>Hi, I am</p>
-        <h1>Bolutife Omole</h1>
-        <h2>Electrical Engineering with Computing @ MIT</h2>
-        <p>Hi I'm Bolutife Omole, an incoming Electrical Engineering Student at MIT with a passion for its applications in Reneweable Energy, transportation, and Robotics. As I transition into the next phase of life, I am eager to continue to the develop the skills that I've gained and collaborate with like minded individuals to positiely impact my community. </p>
+        <p class="eyebrow">Hello, I’m</p>
+        <h1 class="title">Bolutife Omole</h1>
+        <h2 class="subtitle">Electrical Engineering with Computing @ MIT</h2>
+        <p class="lede">
+          I’m an incoming Electrical Engineering student interested in
+          renewable energy, transportation, and robotics. I love learning,
+          building, and collaborating to make useful things for my community.
+        </p>
 
-        <div class="social-links-top">
-          <a href="mailto:bomole06@gmail.com" target="_blank" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/bolutife-omole-382085361/" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://github.com/bolutifeomole" target="_blank" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.instagram.com/bolu_omole/" target="_blank" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
+        <div class="badges">
+          <span class="badge"><i class="fa-solid fa-bolt"></i> Energy</span>
+          <span class="badge"><i class="fa-solid fa-robot"></i> Robotics</span>
+          <span class="badge"><i class="fa-solid fa-network-wired"></i> Systems</span>
+          <span class="badge"><i class="fa-solid fa-computer"></i> Electronics</span>
+        </div>
+
+        <div class="cta-row">
+          <a href="#projects" class="btn btn-primary">See Projects</a>
+          <div class="social-links-top">
+            <a href="mailto:bomole06@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/bolutife-omole-382085361/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/bolutifeomole" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/bolu_omole/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
         </div>
       </div>
 
-      <div class="home-image">
-        <img src="IMG_1234.JPG" alt="Bolutife Omole">
+      <div class="home-image parallax tilt">
+        <img src="IMG_1234.JPG" alt="Bolutife Omole portrait" />
       </div>
     </div>
-    <div id="quote" class="quote-container">
+
+    <div id="quote" class="quote-container reveal">
       <blockquote>
-        "I have never been good at anything except for the ability to learn"
-        <span>- Kanye West</span>
+        “The scientist is not a person who gives the right answers, but one who asks the right questions”
+        <span>— Claude Lévi-Strauss</span>
       </blockquote>
     </div>
   </section>
 
-  <section class="experience-section" id="experience">
-    <h2>Experience</h2>
-    <div class="timeline">
 
+  <section class="experience-section reveal" id="experience">
+    <h2>Work Experience</h2>
+    <div class="timeline">
       <div class="timeline-item">
+        <div class="timeline-pin" aria-hidden="true"></div>
         <img class="timeline-logo" src="srt-logo.svg" alt="SRT Logo" />
         <div class="timeline-content">
           <h3>SRT Helpdesk Technical Support</h3>
-          <p>SRT Communications | 2024 – 2025</p>
+          <p>SRT Communications • 2024 – 2025</p>
           <ul>
-            <li>Provided support for networking and connectivity issues.</li>
-            <li>Troubleshot SRT routers, access points, and ONTs.</li>
+            <li>Supported networking/connectivity for residential and SMB customers.</li>
+            <li>Diagnosed and configured routers, access points, and ONTs.</li>
           </ul>
         </div>
       </div>
 
       <div class="timeline-item">
+        <div class="timeline-pin" aria-hidden="true"></div>
         <img class="timeline-logo" src="burgerking-logo.png" alt="Burger King Logo" />
         <div class="timeline-content">
           <h3>Team Member</h3>
-          <p>Burger King | 2021 – 2022</p>
+          <p>Burger King • 2021 – 2022</p>
           <ul>
-            <li>Delivered fast-paced customer service ensuring satisfaction.</li>
-            <li>Maintained a clean, health-compliant workspace.</li>
+            <li>Delivered fast, friendly customer service.</li>
+            <li>Kept work areas clean and health-compliant.</li>
           </ul>
         </div>
       </div>
-
     </div>
-  </section>    
-  <section id="projects">
+  </section>
+
+  <section id="projects" class="reveal">
     <h2>Projects</h2>
     <div class="project-grid">
-
-      <div class="project-card">
+      <article class="project-card">
         <img src="stocksim.png" alt="Stock Simulator Screenshot" />
         <div class="project-info">
           <h3>Stock Simulator</h3>
-          <p>Developed a simple interactive stock market simulator in <strong>Python</strong> with <strong>matplotlib</strong> for visualization, <strong>pandas</strong> for data analysis, and the <strong>Yahoo Finance API</strong> for live and historical market data. Implemented technical indicators, virtual portfolios, and profit/loss tracking.</p>
+          <p>Interactive market simulator using <strong>Python</strong>, <strong>matplotlib</strong>, <strong>pandas</strong>, and the <strong>Yahoo Finance API</strong>, with indicators and portfolio tracking.</p>
         </div>
         <div class="project-overlay">
-          <div class="project-links">
-            <a href="https://github.com/bolutifeomole" target="_blank" class="btn">View Code</a>
-          </div>
+          <a href="https://github.com/bolutifeomole" target="_blank" rel="noopener" class="btn overlay-btn">View Code</a>
         </div>
-      </div>
+      </article>
 
-      <div class="project-card">
-        <img src="robottour.png" alt="Robot image" />
+      <article class="project-card">
+        <img src="robottour.png" alt="Two-wheeled Arduino robot" />
         <div class="project-info">
           <h3>Robot Tour</h3>
-          <p>Built a two‑wheeled robot with an <strong>Arduino Uno</strong>, <strong>DFRobot 6V 160 RPM motors</strong>, and an <strong>Adafruit Motor Shield</strong> on a 3D-printed frame created by Tektite. Wired and soldered components, and programmed motor control in <strong>C++</strong> to create a fully functioning robot.</p>
-          <p>Took inspiration from Tektite's robot tour kit. </p>
+          <p>Two-wheeled robot with <strong>Arduino Uno</strong>, <strong>DFRobot motors</strong>, and <strong>Adafruit Motor Shield</strong> on a 3D-printed chassis. Programmed motor control in <strong>C++</strong>.</p>
         </div>
         <div class="project-overlay">
-          <div class="project-links">
-            <a href="https://github.com/bolutifeomole" target="_blank" class="btn">View Code</a>
-          </div>
+          <a href="https://github.com/bolutifeomole" target="_blank" rel="noopener" class="btn overlay-btn">View Code</a>
         </div>
-      </div>
+      </article>
 
-      <div class="project-card">
-        <img src="portfolio.png" alt="Portfolio Image" />
+      <article class="project-card">
+        <img src="portfolio.png" alt="Portfolio Website" />
         <div class="project-info">
-          <h3>Personal Portfolio Website</h3>
-          <p>This website! A personal portfolio webpage built using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>.</p>
+          <h3>Personal Portfolio</h3>
+          <p>This site: built with semantic <strong>HTML</strong>, responsive <strong>CSS</strong>, and progressive enhancement in <strong>JavaScript</strong>.</p>
         </div>
         <div class="project-overlay">
-          <div class="project-links">
-            <a href="https://github.com/bolutifeomole" target="_blank" class="btn">View Code</a>
-          </div>
+          <a href="https://github.com/bolutifeomole" target="_blank" rel="noopener" class="btn overlay-btn">View Code</a>
         </div>
-      </div>
-
+      </article>
     </div>
 
-    <div class="skills-subsection">
+    <div class="skills-subsection reveal">
       <h3>Skills</h3>
       <div class="skills-grid">
         <span class="skill-tag">HTML</span>
@@ -159,68 +160,63 @@
         <span class="skill-tag">Arduino</span>
         <span class="skill-tag">Python</span>
         <span class="skill-tag">Soldering</span>
-        <span class="skill-tag">Computer Networking</span>
+        <span class="skill-tag">Networking</span>
         <span class="skill-tag">Public Speaking</span>
-        <span class="skill-tag">Team Leadership</span>
+        <span class="skill-tag">Leadership</span>
         <span class="skill-tag">Violin</span>
-        <span class="skill-tag">Comptia Tech+ Certification</span>
+        <span class="skill-tag">CompTIA Tech+</span>
       </div>
     </div>
-
   </section>
 
-  <section id="education" class="section">
+
+  <section id="education" class="section reveal">
     <h2>Education</h2>
     <div class="section-container">
-
       <div class="section-card">
         <div class="item-head">
-          <h3>Massachusetts Institute of Technology (MIT) </h3>
-          <span class="item-meta">2025-2029</span>
+          <h3>Massachusetts Institute of Technology (MIT)</h3>
+          <span class="item-meta">2025–2029</span>
         </div>
         <p class="small"><strong>GPA:</strong> TBD</p>
         <div class="grid-2" style="margin-top:.75rem;">
           <div>
             <h4>Relevant Coursework</h4>
             <div class="pills">
-              <span class="pill">Multivariable Calculus - Fall 25</span>
-              <span class="pill">Physics I - Fall 25</span>
-              <span class="pill">Introduction to Programming and Computer Science - Fall 25</span>
-              <span class="pill">Differential Equations - Spring 26</span>
-              <span class="pill">Physics II - Spring 26</span>
-              <span class="pill">Mathematics for Computer Science(Discrete Math) - Spring 26</span>
-              
+              <span class="pill">Multivariable Calculus — F25</span>
+              <span class="pill">Physics I — F25</span>
+              <span class="pill">Intro to CS — F25</span>
+              <span class="pill">Differential Equations — S26</span>
+              <span class="pill">Physics II — S26</span>
+              <span class="pill">Discrete Math — S26</span>
             </div>
           </div>
-
           <div>
-            <h4>Clubs/Activities</h4>
+            <h4>Clubs / Activities</h4>
             <div class="pills">
-              <span class="pill">MIT Solar Electric Vehicle Team </span>
+              <span class="pill">MIT Solar Electric Vehicle Team</span>
               <span class="pill">MIT Wind</span>
-              <span class="pill">National Society of Black Engineers(NSBE)</span>
-            
+              <span class="pill">NSBE</span>
             </div>
           </div>
-          
         </div>
       </div>
 
       <div class="section-card">
         <div class="item-head">
           <h3>Minot High School</h3>
-          <span class="item-meta">2021-2025</span>
+          <span class="item-meta">2021–2025</span>
         </div>
-        <p class="small"><strong>GPA:</strong>4.46W 4.0UW</p>
+        <p class="small"><strong>GPA:</strong> 4.46W / 4.0UW</p>
         <div class="grid-2" style="margin-top:.75rem;">
           <div>
-            <h4>Relevant Coursework</h4>
+            <h4>AP Coursework</h4>
             <div class="pills">
-              <span class="pill">AP Calculus BC (5)</span>
-              <span class="pill">AP Chemistry (4)</span>
-              <span class="pill">AP English Language and Composition(5)</span>
-              <span class="pill">AP US History (4)</span>
-              <span class="pill">AP World History (5)</span>
+              <span class="pill">Calculus BC (5)</span>
+              <span class="pill">Chemistry (4)</span>
+              <span class="pill">English Lang (5)</span>
+              <span class="pill">U.S. History (4)</span>
+              <span class="pill">World History (5)</span>
             </div>
           </div>
           <div>
@@ -239,29 +235,20 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <section id="achievements" class="section">
+
+  <section id="achievements" class="section reveal">
     <h2>Achievements & Distinctions</h2>
-
     <div class="timeline-cards">
-
       <article class="year-card">
-        <header class="year-header">
-          <h3 class="year-title">2022</h3>
-        </header>
-        <ul class="year-items">
-          <li>Mouse River Loop Envirothon — 1st Place</li>
-        </ul>
+        <header class="year-header"><h3 class="year-title">2022</h3></header>
+        <ul class="year-items"><li>Mouse River Loop Envirothon — 1st Place</li></ul>
       </article>
 
-
       <article class="year-card">
-        <header class="year-header">
-          <h3 class="year-title">2023</h3>
-        </header>
+        <header class="year-header"><h3 class="year-title">2023</h3></header>
         <ul class="year-items">
           <li>Mouse River Loop Envirothon — 1st Place</li>
           <li>ND State Envirothon — Runner-Up</li>
@@ -269,59 +256,50 @@
         </ul>
       </article>
 
-
-
       <article class="year-card">
-        <header class="year-header">
-          <h3 class="year-title">2024</h3>
-        </header>
+        <header class="year-header"><h3 class="year-title">2024</h3></header>
         <ul class="year-items">
           <li>Science Bowl — State Runner-Up</li>
+          <li>Science Olympiad Robot Tour — Regional Champion</li>
+          <li>Science Olympiad Codebusters - State Runner Up</li>
           <li>AP Scholar with Distinction</li>
           <li>Fanschool Nationwide Election Challenge — Runner-Up</li>
-          <li>Selected for NDMEA All-State Orchestra</li>
-          <li>Selected for UND Honors Orchestra Festival</li>
-          <li>Mouse River Loop Envirothon — 2nd Place</li>
+          <li>NDMEA All-State Orchestra</li>
+          <li>UND Honors Orchestra Festival</li>
+          <li>Envirothon — 2nd Place (Mouse River Loop)</li>
           <li>ND State Envirothon — Runner-Up</li>
         </ul>
       </article>
 
-
-
-
       <article class="year-card">
-        <header class="year-header">
-          <h3 class="year-title">2025</h3>
-        </header>
+        <header class="year-header"><h3 class="year-title">2025</h3></header>
         <ul class="year-items">
-          <li>DECA Human Resources Management — State Runner-Up</li>
-          <li>DECA Buying & Merchandising Operations Research — State 3rd Place</li>
+          <li>DECA Human Resource Management — State Runner-Up</li>
+          <li>DECA Buying & Merchandising Operation Research — State 3rd Place</li>
+          <li>Science Olympiad Robot Tour - Regional Champion</li>
           <li>ND State Envirothon — 3rd Place</li>
-          <li>Selected for NDMEA All-State Orchestra</li>
-          <li>Selected for UND Honors Orchestra Festival</li>
+          <li>NDMEA All-State Orchestra</li>
+          <li>UND Honors Orchestra Festival</li>
           <li>FBLA Digital Video Production — State Runner-Up</li>
           <li>National Merit Scholarship Finalist</li>
         </ul>
       </article>
-
-
-
-      
     </div>
-
   </section>
 
-  <section id="community" class="section">
+
+  <section id="community" class="section reveal">
     <h2>Community Service</h2>
     <div class="section-container">
-
       <div class="section-card">
         <div class="item-head">
           <h3>Greener Tomorrow — Volunteer</h3>
           <span class="item-meta">Minot, ND</span>
         </div>
         <ul class="clean-list">
-          <li>Collaborated with fellow students; Organized volunteer efforts to clean up public spaces; promoted sustainability education and inspired students to take action for a sustainable future.</li>
+          <li>Collaborated with fellow students; Organized volunteer efforts to 
+            clean up public spaces; promoted sustainability education and inspired 
+            students to take action for a sustainable future.</li>
         </ul>
       </div>
 
@@ -331,37 +309,17 @@
           <span class="item-meta">Minot, ND</span>
         </div>
         <ul class="clean-list">
-          <li>Volunteered for various events: setting up/clearing concert stages, volunteered for youth orchestra solo day event. Sigining in students, helping students prepare and tune instruments.</li>
+          <li>Supported concerts and youth events (sign-in, prep, and instrument tuning).</li>
         </ul>
       </div>
-
     </div>
   </section>
 
-
   <footer>
-    <p>© 2025 Bolutife Omole</p>
+    <center><p>© 2025 Bolutife Omole</p></center>
   </footer>
 
+
   <script src="script.js" defer></script>
-  <script>
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('button');
-      const originalText = btn.textContent;
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = 'Sent!';
-        setTimeout(() => {
-          btn.textContent = originalText;
-          btn.disabled = false;
-          e.target.reset();
-        }, 1500);
-      }, 1000);
-    }
-  </script>
-
-
 </body>
 </html>
