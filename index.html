@@ -24,15 +24,13 @@
     <a class="brand" href="#home" aria-label="Go to top">
       <span class="brand-mark">BO</span><span class="dot" aria-hidden="true"></span>
     </a>
-    <div class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav-links">
+      <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
+    </button>
+    <div class="nav-links" id="primary-nav-links">
       <a class="nav-link" href="#home">Home</a>
-      <a class="nav-link" href="#experience">Experience</a>
-      <a class="nav-link" href="#projects">Projects</a>
-      <a class="nav-link" href="#education">Education</a>
-      <a class="nav-link" href="#achievements">Achievements</a>
-      <a class="nav-link" href="#community">Community</a>
-
-
+      <a class="nav-link" href="built.html">Experience</a>
+      <a class="nav-link" href="journal.html">Journal</a>
     </div>
   </nav>
 
@@ -42,32 +40,13 @@
       <div class="home-text">
         <p class="eyebrow">Hello, I’m</p>
         <h1 class="title">Bolutife Omole</h1>
-        <h2 class="subtitle">First-Year Student @ MIT</h2>
-        <p class="lede">
-          I’m an aspiring Engineer fascinated by clean energy, 
-          transportation, and robotics. What excites me most is the 
-          process of learning and working alongside others to build 
-          things that are not just technically sound, but also 
-          meaningful to the world at large.
-        </p>
+        <h2 class="subtitle">EECS @ MIT</h2>
 
-        <div class="badges">
-          <span class="badge"><i class="fa-solid fa-bolt"></i>Energy</span>
-          <span class="badge"><i class="fa-solid fa-robot"></i>Robotics</span>
-          <span class="badge"><i class="fa-solid fa-code"></i>Embedded Systems</span>
-          <span class="badge"><i class="fa-solid fa-chart-line"></i>Economics</span>
-          <span class="badge"><i class="fa-salid fa-heart"></i>Healthcare</span>
-          <span class="badge"><i class="fa-solid fa-scale-balanced"></i>Public Policy</span>
-        </div>
-
-        <div class="cta-row">
-          <a href="#projects" class="btn btn-primary">See Projects</a>
-          <div class="social-links-top">
-            <a href="mailto:bomole06@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/bolutife-omole-382085361/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/bolutifeomole" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/bolu_omole/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          </div>
+        <div class="social-links-top">
+          <a href="mailto:bomole06@gmail.com"><i class="fas fa-envelope"></i><span>Email</span></a>
+          <a href="https://www.linkedin.com/in/bolutife-omole-382085361/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
+          <a href="https://github.com/bolutifeomole" target="_blank" rel="noopener"><i class="fab fa-github"></i><span>GitHub</span></a>
+          <a href="https://www.instagram.com/bolu_omole/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i><span>Instagram</span></a>
         </div>
       </div>
 
@@ -76,275 +55,58 @@
       </div>
     </div>
 
-    <div id="quote" class="quote-container reveal">
-      <blockquote>
-        “The scientist is not a person who gives the right answers, but one who asks the right questions”
-        <span>// Claude Lévi-Strauss</span>
-      </blockquote>
-    </div>
   </section>
 
-
-  <section class="experience-section reveal" id="experience">
-    <h2>Experience</h2>
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <div class="timeline-pin" aria-hidden="true"></div>
-        <img class="timeline-logo" src="MiTeecslogo.jpg" alt="MIT EECS Logo" />
-        <div class="timeline-content">
-          <h3>Undergraduate Researcher</h3>
-          <p>MIT Research Laboratory of Electronics • 2026 – Present</p>
-          <ul>
-            <li>Designed and updated a miniaturized PCB for an ingestible 
-              neuro-electronic device (MiGUT) to support a custom ASIC (GMINI) 
-              for in-vivo testing. Developed embedded firmware for a Cortex-M3 
-              microcontroller, implementing SPI communication translated from a 
-              Verilog testbench. Performed PCB layout, bring-up, and debugging 
-              using Altium, validating ASIC communication via benchtop testing 
-              and oscilloscope measurements.</li>
-          </ul>
-        </div>
+  <section id="about" class="reveal">
+    <div class="about-quote-layout">
+      <div class="about-col">
+        <h2>About Me</h2>
+        <p>
+          As a rising sophomore at MIT pursuing a degree in
+          Electrical Engineering and Computer Science, I am
+          dedicated to applying engineering principles to
+          build hardware that solves real problems. My academic
+          journey emphasizes hands-on experience, particularly in
+          circuit design, embedded systems, and power electronics,
+          aligning with my long-term interest in developing solutions
+          for power electronics and medical devices.
+        </p>
       </div>
-
-      <div class="timeline-item">
-        <div class="timeline-pin" aria-hidden="true"></div>
-        <img class="timeline-logo" src="SEVT.png" alt="SEVT Logo" />
-        <div class="timeline-content">
-          <h3>Electrical Engineering Team Member</h3>
-          <p>MIT Solar Electric Vehicle Team • 2025 – Present</p>
-          <ul>
-            <li>Developed interactive real time frontend dashboard, 
-              integrating live telemetry and traffic model data to support 
-              performance and safety decisions</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-pin" aria-hidden="true"></div>
-        <img class="timeline-logo" src="srt-logo.svg" alt="SRT Logo" />
-        <div class="timeline-content">
-          <h3>SRT Helpdesk Technical Support</h3>
-          <p>SRT Communications • 2024 – 2025</p>
-          <ul>
-            <li>Supported networking/connectivity for residential and SMB customers.</li>
-            <li>Diagnosed and configured routers, access points, and ONTs.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-pin" aria-hidden="true"></div>
-        <img class="timeline-logo" src="burgerking-logo.png" alt="Burger King Logo" />
-        <div class="timeline-content">
-          <h3>Team Member</h3>
-          <p>Burger King • 2021 – 2022</p>
-          <ul>
-            <li>Delivered fast, friendly customer service.</li>
-            <li>Kept work areas clean and health-compliant.</li>
-          </ul>
-        </div>
+      <div class="quote-container">
+        <blockquote>
+          “The scientist is not a person who gives the right answers, but one who asks the right questions”
+          <span>// Claude Lévi-Strauss</span>
+        </blockquote>
       </div>
     </div>
   </section>
 
-  <section id="projects" class="reveal">
-    <h2>Projects</h2>
-    <div class="project-grid">
-
-      <article class="project-card">
-        <img src="robottour.png" alt="Two-wheeled Arduino robot" />
-        <div class="project-info">
-          <h3>Robot Tour</h3>
-          <p>Built a two‑wheeled robot with an <strong>Arduino Uno</strong>, <strong>DFRobot 6V 160 RPM motors</strong>, and an <strong>Adafruit Motor Shield</strong> on a 3D-printed frame created by Tektite. Wired and soldered components, and programmed motor control in <strong>C++</strong>.</p>        
-        </div>
-        <div class="project-overlay">
-          <a href="https://github.com/bolutifeomole" target="_blank" rel="noopener" class="btn overlay-btn">View Code</a>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <img src="portfolio.png" alt="Portfolio Website" />
-        <div class="project-info">
-          <h3>Personal Portfolio</h3>
-          <p>This site! A personal portfolio webpage built from scratch using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>.</p>
-        </div>
-        <div class="project-overlay">
-          <a href="https://github.com/bolutifeomole" target="_blank" rel="noopener" class="btn overlay-btn">View Code</a>
-        </div>
-      </article>
-    </div>
-
-    <div class="skills-subsection reveal">
-      <h3>Skills</h3>
-      <div class="skills-grid">
-        <span class="skill-tag">HTML</span>
-        <span class="skill-tag">CSS</span>
-        <span class="skill-tag">JavaScript</span>
-        <span class="skill-tag">C++</span>
-        <span class="skill-tag">Arduino</span>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">Soldering</span>
-        <span class="skill-tag">Networking</span>
-        <span class="skill-tag">Public Speaking</span>
-        <span class="skill-tag">Leadership</span>
-        <span class="skill-tag">Violin</span>
-        <span class="skill-tag">CompTIA Tech+</span>
+  <section id="interests" class="reveal">
+    <h2>Interests</h2>
+    <div class="section-container interest-grid">
+      <div class="interest-card">
+        <span class="interest-icon"><i class="fa-solid fa-bolt"></i></span>
+        <span class="interest-label">Energy</span>
       </div>
-    </div>
-  </section>
-
-
-  <section id="education" class="section reveal">
-    <h2>Education</h2>
-    <div class="section-container">
-      <div class="section-card">
-        <div class="item-head">
-          <h3>Massachusetts Institute of Technology (MIT)</h3>
-          <span class="item-meta">2025–2029</span>
-        </div>
-        <p class="small"><strong>GPA:</strong> TBD</p>
-        <div class="grid-2" style="margin-top:.75rem;">
-          <div>
-            <h4>Relevant Coursework</h4>
-            <div class="pills">
-              <span class="pill">Multivariable Calculus — F25</span>
-              <span class="pill">Physics I — F25</span>
-              <span class="pill">Intro to CS — F25</span>
-              <span class="pill">Linear Algebra — S26</span>
-              <span class="pill">Physics II — S26</span>
-              <span class="pill">Discrete Math — S26</span>
-              <span class="pill">Low-Level Programming in C - S26</span>
-            </div>
-          </div>
-          <div>
-            <h4>Clubs / Activities</h4>
-            <div class="pills">
-              <span class="pill">MIT Solar Electric Vehicle Team</span>
-              <span class="pill">NSBE</span>
-            </div>
-          </div>
-        </div>
+      <div class="interest-card">
+        <span class="interest-icon"><i class="fa-solid fa-robot"></i></span>
+        <span class="interest-label">Robotics</span>
       </div>
-
-      <div class="section-card">
-        <div class="item-head">
-          <h3>Minot High School</h3>
-          <span class="item-meta">2021–2025</span>
-        </div>
-        <p class="small"><strong>GPA:</strong> 4.46W / 4.0UW</p>
-        <div class="grid-2" style="margin-top:.75rem;">
-          <div>
-            <h4>AP Coursework</h4>
-            <div class="pills">
-              <span class="pill">Calculus BC (5)</span>
-              <span class="pill">Chemistry (4)</span>
-              <span class="pill">English Lang (5)</span>
-              <span class="pill">U.S. History (4)</span>
-              <span class="pill">World History (5)</span>
-            </div>
-          </div>
-
-          <div>
-            <h4>Clubs</h4>
-            <div class="pills">
-              <span class="pill">Envirothon | Aquatics Specialist</span>
-              <span class="pill">Coding Club | President</span>
-              <span class="pill">Science Olympiad | Co-President</span>
-
-              <span class="pill">DECA | Secretary</span>
-              <span class="pill">Science Bowl | Co-President</span>
-              <span class="pill">Orchestra | Concertmaster</span>
-              
-              <span class="pill">FBLA</span>
-              <span class="pill">Student Council</span>
-              <span class="pill">Theatre</span>
-            </div>
-          </div>
-        </div>
+      <div class="interest-card">
+        <span class="interest-icon"><i class="fa-solid fa-code"></i></span>
+        <span class="interest-label">Embedded Systems</span>
       </div>
-    </div>
-  </section>
-
-
-  <section id="achievements" class="section reveal">
-    <h2>Achievements & Distinctions</h2>
-    <div class="timeline-cards">
-
-      <article class="year-card">
-        <header class="year-header"><h3 class="year-title">2025</h3></header>
-        <ul class="year-items">
-          <li>DECA Human Resource Management — State Runner-Up</li>
-          <li>DECA Buying & Merchandising Operation Research — State 3rd Place</li>
-          <li>Science Olympiad Robot Tour - Regional Champion</li>
-          <li>ND State Envirothon — 3rd Place</li>
-          <li>NDMEA All-State Orchestra</li>
-          <li>UND Honors Orchestra Festival</li>
-          <li>FBLA Digital Video Production — State Runner-Up</li>
-          <li>National Merit Scholarship Finalist</li>
-        </ul>
-      </article>
-
-      <article class="year-card">
-        <header class="year-header"><h3 class="year-title">2024</h3></header>
-        <ul class="year-items">
-          <li>Science Bowl — State Runner-Up</li>
-          <li>Science Olympiad Robot Tour — Regional Champion</li>
-          <li>Science Olympiad Codebusters - State Runner Up</li>
-          <li>AP Scholar with Distinction</li>
-          <li>Fanschool Nationwide Election Challenge — Runner-Up</li>
-          <li>NDMEA All-State Orchestra</li>
-          <li>UND Honors Orchestra Festival</li>
-          <li>Envirothon — 2nd Place (Mouse River Loop)</li>
-          <li>ND State Envirothon — Runner-Up</li>
-        </ul>
-      </article>
-
-
-
-      <article class="year-card">
-        <header class="year-header"><h3 class="year-title">2023</h3></header>
-        <ul class="year-items">
-          <li>Mouse River Loop Envirothon — 1st Place</li>
-          <li>ND State Envirothon — Runner-Up</li>
-          <li>Selected for UND Honors Orchestra Festival</li>
-        </ul>
-      </article>
-
-      <article class="year-card">
-        <header class="year-header"><h3 class="year-title">2022</h3></header>
-        <ul class="year-items"><li>Mouse River Loop Envirothon — 1st Place</li></ul>
-      </article>
-
-
-    </div>
-  </section>
-
-
-  <section id="community" class="section reveal">
-    <h2>Community Service</h2>
-    <div class="section-container">
-      <div class="section-card">
-        <div class="item-head">
-          <h3>Greener Tomorrow — Volunteer</h3>
-          <span class="item-meta">Minot, ND</span>
-        </div>
-        <ul class="clean-list">
-          <li>Collaborated with fellow students; Organized volunteer efforts to 
-            clean up public spaces; promoted sustainability education and inspired 
-            students to take action for a sustainable future.</li>
-        </ul>
+      <div class="interest-card">
+        <span class="interest-icon"><i class="fa-solid fa-chart-line"></i></span>
+        <span class="interest-label">Economics</span>
       </div>
-
-      <div class="section-card">
-        <div class="item-head">
-          <h3>Minot Public Schools Orchestra — Volunteer</h3>
-          <span class="item-meta">Minot, ND</span>
-        </div>
-        <ul class="clean-list">
-          <li>Supported concerts and youth events (sign-in, prep, and instrument tuning).</li>
-        </ul>
+      <div class="interest-card">
+        <span class="interest-icon"><i class="fa-solid fa-heart"></i></span>
+        <span class="interest-label">Healthcare</span>
+      </div>
+      <div class="interest-card">
+        <span class="interest-icon"><i class="fa-solid fa-scale-balanced"></i></span>
+        <span class="interest-label">Public Policy</span>
       </div>
     </div>
   </section>
