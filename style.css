@@ -97,7 +97,7 @@ section{
   content:""; position:absolute; left:0; right:100%; bottom:-4px; height:2px; background:var(--accent-color);
   transition:right .25s ease;
 }
-.site-nav a:hover::after{ right:0; }
+.site-nav a:not(.brand):hover::after{ right:0; }
 
 /* Reserve space for fixed header */
 body{ padding-top: var(--nav-h); }
