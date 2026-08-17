@@ -43,18 +43,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Optional: subtle tilt on elements with .tilt
-  document.querySelectorAll('.tilt').forEach(el => {
-    el.addEventListener('mousemove', (e) => {
-      const r = el.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width;
-      const y = (e.clientY - r.top) / r.height;
-      const rx = (y - 0.5) * 6;
-      const ry = (x - 0.5) * -6;
-      el.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
-    });
-    el.addEventListener('mouseleave', () => {
-      el.style.transform = 'perspective(900px) rotateX(0) rotateY(0)';
-    });
-  });
 });

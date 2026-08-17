@@ -200,8 +200,6 @@ body{ padding-top: var(--nav-h); }
   outline:1px solid var(--primary-color); outline-offset:6px;
 }
 
-.tilt{ transform-style:preserve-3d; will-change:transform; }
-
 /*Quote*/
 .quote-container{
   display:flex; align-items:center; justify-content:center; gap:2rem; flex-wrap:wrap;
