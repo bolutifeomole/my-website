@@ -9,14 +9,14 @@
   <title>Bolutife Omole</title>
   <link rel="icon" href="/favicon.png" type="image/png">
 
-  <!-- LCP hero image: fetch first, at high priority -->
+
   <link rel="preload" as="image" type="image/avif" fetchpriority="high"
         imagesrcset="img/hero-480.avif 480w, img/hero-880.avif 880w, img/hero-1320.avif 1320w"
         imagesizes="(max-width: 488px) 90vw, 440px">
 
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Non-critical third-party CSS: loaded without blocking first render -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -41,13 +41,12 @@
     <div class="nav-links" id="primary-nav-links">
       <a class="nav-link" href="#home">Home</a>
       <a class="nav-link" href="#experience">Experience</a>
-      <a class="nav-link" href="journal.html">Journal</a>
+      <!-- <a class="nav-link" href="journal.html">Journal</a> -->
       <a class="nav-link" href="Bolutife%20Omole%20Resume%20-%202026.pdf" target="_blank" rel="noopener">Resume</a>
     </div>
   </nav>
 
 
-  <!-- No .reveal here: the hero must be visible at first paint (opacity:0 delayed LCP until JS ran) -->
   <section id="home">
     <div class="home-content">
       <div class="home-text">
