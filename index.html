@@ -9,12 +9,23 @@
   <title>Bolutife Omole</title>
   <link rel="icon" href="/favicon.png" type="image/png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
+  <!-- LCP hero image: fetch first, at high priority -->
+  <link rel="preload" as="image" type="image/avif" fetchpriority="high"
+        imagesrcset="img/hero-480.avif 480w, img/hero-880.avif 880w, img/hero-1320.avif 1320w"
+        imagesizes="(max-width: 488px) 90vw, 440px">
 
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Non-critical third-party CSS: loaded without blocking first render -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </noscript>
 </head>
 <body>
 
@@ -36,7 +47,8 @@
   </nav>
 
 
-  <section id="home" class="reveal">
+  <!-- No .reveal here: the hero must be visible at first paint (opacity:0 delayed LCP until JS ran) -->
+  <section id="home">
     <div class="home-content">
       <div class="home-text">
         <p class="eyebrow">Hello, I’m</p>
@@ -62,7 +74,20 @@
       </div>
 
       <div class="home-image">
-        <img src="IMG_1234.JPG" alt="Bolutife Omole portrait" />
+        <picture>
+          <source type="image/avif"
+                  srcset="img/hero-480.avif 480w, img/hero-880.avif 880w, img/hero-1320.avif 1320w"
+                  sizes="(max-width: 488px) 90vw, 440px">
+          <source type="image/webp"
+                  srcset="img/hero-480.webp 480w, img/hero-880.webp 880w, img/hero-1320.webp 1320w"
+                  sizes="(max-width: 488px) 90vw, 440px">
+          <img src="img/hero-880.jpg"
+               srcset="img/hero-480.jpg 480w, img/hero-880.jpg 880w, img/hero-1320.jpg 1320w"
+               sizes="(max-width: 488px) 90vw, 440px"
+               width="880" height="1040"
+               fetchpriority="high"
+               alt="Bolutife Omole portrait" />
+        </picture>
       </div>
     </div>
 
@@ -171,7 +196,7 @@
 
       <div class="timeline-item">
         <div class="timeline-pin" aria-hidden="true"></div>
-        <img class="timeline-logo" src="WATABOT_logo.jpg" alt="MIT EECS Logo" />
+        <img class="timeline-logo" src="WATABOT_logo.jpg" width="40" height="40" loading="lazy" decoding="async" alt="WATABOT Logo" />
         <div class="timeline-content">
           <h3>Hardware Design Intern</h3>
           <p>WATABOT • May 2026 – July 2026</p>
@@ -186,7 +211,7 @@
       </div>
       <div class="timeline-item">
         <div class="timeline-pin" aria-hidden="true"></div>
-        <img class="timeline-logo" src="RLE_logo.jpg" alt="MIT EECS Logo" />
+        <img class="timeline-logo" src="RLE_logo.jpg" width="40" height="40" loading="lazy" decoding="async" alt="MIT RLE Logo" />
         <div class="timeline-content">
           <h3>Undergraduate Research Assistant</h3>
           <p>MIT Research Laboratory of Electronics • Jan 2026 – May 2026</p>
@@ -203,7 +228,7 @@
 
       <div class="timeline-item">
         <div class="timeline-pin" aria-hidden="true"></div>
-        <img class="timeline-logo" src="SEVT.png" alt="SEVT Logo" />
+        <img class="timeline-logo" src="SEVT.png" width="40" height="40" loading="lazy" decoding="async" alt="SEVT Logo" />
         <div class="timeline-content">
           <h3>Electrical Engineering Team Member</h3>
           <p>MIT Solar Electric Vehicle Team • Aug 2025 – Present</p>
@@ -217,7 +242,7 @@
 
       <div class="timeline-item">
         <div class="timeline-pin" aria-hidden="true"></div>
-        <img class="timeline-logo" src="srt-logo.svg" alt="SRT Logo" />
+        <img class="timeline-logo" src="srt-logo.svg" width="40" height="40" loading="lazy" decoding="async" alt="SRT Logo" />
         <div class="timeline-content">
           <h3>SRT Helpdesk Technical Support</h3>
           <p>SRT Communications • 2024 – 2025</p>
@@ -230,7 +255,7 @@
 
       <div class="timeline-item">
         <div class="timeline-pin" aria-hidden="true"></div>
-        <img class="timeline-logo" src="burgerking-logo.png" alt="Burger King Logo" />
+        <img class="timeline-logo" src="img/burgerking-logo-80.webp" width="40" height="40" loading="lazy" decoding="async" alt="Burger King Logo" />
         <div class="timeline-content">
           <h3>Team Member</h3>
           <p>Burger King • 2021 – 2022</p>
@@ -250,7 +275,7 @@
     <div class="project-grid">
 
       <article class="project-card">
-        <img src="robottour.png" alt="Two-wheeled Arduino robot" />
+        <img src="img/robottour-283.webp" width="283" height="334" loading="lazy" decoding="async" alt="Two-wheeled Arduino robot" />
         <div class="project-info">
           <h3>Robot Tour</h3>
           <p>Built a two‑wheeled robot with an <strong>Arduino Uno</strong>, <strong>DFRobot 6V 160 RPM motors</strong>, and an <strong>Adafruit Motor Shield</strong> on a 3D-printed frame created by Tektite. Wired and soldered components, and programmed motor control in <strong>C++</strong>.</p>
@@ -261,7 +286,7 @@
       </article>
 
       <article class="project-card">
-        <img src="portfolio.png" alt="Portfolio Website" />
+        <img src="img/portfolio-800.webp" srcset="img/portfolio-400.webp 400w, img/portfolio-800.webp 800w" sizes="(min-width: 1100px) 360px, (min-width: 760px) 50vw, 100vw" width="800" height="428" loading="lazy" decoding="async" alt="Portfolio Website" />
         <div class="project-info">
           <h3>Personal Portfolio</h3>
           <p>This site! A personal portfolio webpage built from scratch using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>.</p>
@@ -272,7 +297,7 @@
       </article>
 
       <article class="project-card">
-        <img src="PCB2D.png" alt="PCB2D" />
+        <img src="img/PCB2D-800.webp" srcset="img/PCB2D-400.webp 400w, img/PCB2D-800.webp 800w" sizes="(min-width: 1100px) 360px, (min-width: 760px) 50vw, 100vw" width="800" height="728" loading="lazy" decoding="async" alt="WATABOT controller PCB layout" />
         <div class="project-info">
           <h3>WATABOT Controller</h3>
           <p>A custom multi-function PCB consolidating power regulation, microcontroller interfacing, and 6-channel MOSFET actuator switching for an autonomous robot, replacing multiple discrete boards with a single integrated design.</p>
