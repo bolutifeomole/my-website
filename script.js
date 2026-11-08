@@ -1,15 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Scroll progress
-  const bar = document.getElementById('scroll-progress');
-  const onScroll = () => {
-    const scrolled = window.scrollY;
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = max > 0 ? (scrolled / max) * 100 : 0;
-    if (bar) bar.style.width = pct + '%';
-  };
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
-
   // Reveal-on-scroll
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
