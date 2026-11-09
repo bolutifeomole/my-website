@@ -145,12 +145,6 @@
 .dgm .dot-p{ fill:var(--primary-color); }
 .dgm .arrow-s{ fill:var(--accent-color); }
 
-/* Unwritten sections */
-.draft-tag{
-  display:inline-block; padding:.15rem .5rem; border-radius:3px;
-  background:var(--primary-color); color:#fff;
-  font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:600; letter-spacing:.04em;
-}
 .entry-back{ margin-top:.25rem; }
 
 /* Image viewer */
