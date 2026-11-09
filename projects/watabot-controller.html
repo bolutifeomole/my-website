@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>WATABOT Controller | Projects | Bolutife Omole</title>
+  <meta name="description" content="A short overview of the WATABOT Controller, one PCB that replaces a robot's separate control boards and jumper wires." />
+  <link rel="icon" href="/favicon.png" type="image/png">
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../journal.css" />
+
+  <!-- Non-critical third-party CSS: loaded without blocking first render -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </noscript>
+</head>
+<body>
+
+  <nav class="site-nav" role="navigation" aria-label="Primary">
+    <a class="brand" href="../index.html" aria-label="Go to home">
+      <span class="brand-mark">BO</span><span class="dot" aria-hidden="true"></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav-links">
+      <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
+    </button>
+    <div class="nav-links" id="primary-nav-links">
+      <a class="nav-link" href="../index.html#home">Home</a>
+      <a class="nav-link" href="../index.html#experience">Experience</a>
+      <a class="nav-link" href="../projects.html">Projects</a>
+      <a class="nav-link" href="../Bolutife%20Omole%20Resume%20-%202026.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+  </nav>
+
+  <main>
+    <article class="entry">
+
+      <header class="reveal">
+        <p class="eyebrow">Projects</p>
+        <h1>WATABOT Controller</h1>
+        <div class="entry-roles">
+          <span class="item-meta">Hardware Design Intern, WATABOT</span>
+          <span class="item-meta">Summer 2026</span>
+        </div>
+        <p class="entry-lede">The robot's control electronics were spread across several separate boards connected with jumper wires. I designed one board to replace all of that. The Raspberry Pi plugs into it like a HAT, the Pi's term for an add-on board that mates with its 40-pin header, and the Arduino Nano plugs in through a pair of sockets.</p>
+        <div class="pills">
+          <span class="pill">PCB Design</span>
+          <span class="pill">Altium</span>
+        </div>
+      </header>
+
+      <section>
+        <div class="sheet-row img-left reveal">
+          <div class="sheet-text">
+            <h2>What the board does</h2>
+            <p>I split the schematic into four sheets, one for each part of the job, and this post takes them one at a time. Fig.&nbsp;1 shows how they fit together: 24&nbsp;V comes in at the top, two regulators make the lower voltages, the Pi and the Nano decide what should be on, and a row of switches connects each actuator to its power.</p>
+          </div>
+          <figure class="fig" id="fig-1">
+            <a class="fig-zoom" href="#fig-1">
+              <svg class="dgm" viewBox="0 0 720 572" role="img" aria-label="Block diagram. 24 volts enters through J1 and fuse F1 and feeds two LM2596 buck converters. U2 makes the 5 volt rail for the Raspberry Pi and Arduino Nano. U1 makes the 12 volt rail for the loads and lamps. The Pi drives panel LEDs, the lamp connectors, and switches Q1 to Q3. The Nano drives Q4 to Q6 and reads the flow meter.">
+                <!-- 24 V feed -->
+                <path class="w-p" d="M240 37H300M360 60V80M190 80H530M190 80V100M530 80V100"/>
+                <circle class="dot-p" cx="360" cy="80" r="3.5"/>
+                <text class="pw" x="372" y="74">+24 V</text>
+                <rect class="box" x="110" y="14" width="130" height="46" rx="4"/>
+                <text x="175" y="42" text-anchor="middle">J1 &#183; 24 V in</text>
+                <rect class="box" x="300" y="14" width="120" height="46" rx="4"/>
+                <text x="360" y="42" text-anchor="middle">F1 fuse</text>
+
+                <!-- Regulators -->
+                <rect class="box-p" x="90" y="100" width="200" height="60" rx="4"/>
+                <text class="b" x="190" y="125" text-anchor="middle">U2 &#183; LM2596 buck</text>
+                <text class="s" x="190" y="145" text-anchor="middle">output fuse F3</text>
+                <rect class="box-p" x="430" y="100" width="200" height="60" rx="4"/>
+                <text class="b" x="530" y="125" text-anchor="middle">U1 &#183; LM2596 buck</text>
+                <text class="s" x="530" y="145" text-anchor="middle">output fuse F2</text>
+
+                <!-- 5 V rail -->
+                <path class="w-p" d="M190 160V185M140 185H440M140 185V210M440 185V210"/>
+                <circle class="dot-p" cx="190" cy="185" r="3.5"/>
+                <text class="pw" x="200" y="178">+5 V</text>
+
+                <!-- Controllers -->
+                <rect class="box" x="30" y="210" width="220" height="60" rx="4"/>
+                <text class="b" x="140" y="235" text-anchor="middle">Raspberry Pi</text>
+                <text class="s" x="140" y="255" text-anchor="middle">J13 &#183; 40-pin header</text>
+                <rect class="box" x="330" y="210" width="220" height="60" rx="4"/>
+                <text class="b" x="440" y="235" text-anchor="middle">Arduino Nano</text>
+                <text class="s" x="440" y="255" text-anchor="middle">J14 / J15 sockets</text>
+
+                <!-- Flow meter -->
+                <rect class="box" x="590" y="214" width="96" height="52" rx="4"/>
+                <text x="638" y="236" text-anchor="middle">J8</text>
+                <text class="s" x="638" y="254" text-anchor="middle">flow meter</text>
+                <path class="w-s" d="M590 240H556"/>
+                <polygon class="arrow-s" points="550,240 558,235 558,245"/>
+
+                <!-- Control signals -->
+                <path class="w-s" d="M65 270V324M190 270V324M235 270V300H335V324M475 270V324M530 270V300H610V324"/>
+                <polygon class="arrow-s" points="65,330 60,322 70,322"/>
+                <polygon class="arrow-s" points="190,330 185,322 195,322"/>
+                <polygon class="arrow-s" points="335,330 330,322 340,322"/>
+                <polygon class="arrow-s" points="475,330 470,322 480,322"/>
+                <polygon class="arrow-s" points="610,330 605,322 615,322"/>
+                <text class="sg" x="256" y="292">GPIO</text>
+                <text class="sg" x="540" y="292">GPIO</text>
+
+                <!-- Direct outputs -->
+                <rect class="box" x="10" y="330" width="110" height="56" rx="4"/>
+                <text x="65" y="353" text-anchor="middle">J10&#8211;J12</text>
+                <text class="s" x="65" y="372" text-anchor="middle">panel LEDs</text>
+                <rect class="box" x="130" y="330" width="120" height="56" rx="4"/>
+                <text x="190" y="353" text-anchor="middle">J2 / J3</text>
+                <text class="s" x="190" y="372" text-anchor="middle">lamps, 330 &#937;</text>
+
+                <!-- Switches -->
+                <rect class="box-p" x="270" y="330" width="130" height="56" rx="4"/>
+                <text class="b" x="335" y="353" text-anchor="middle">Q1&#8211;Q3</text>
+                <text class="s" x="335" y="372" text-anchor="middle">low-side switch</text>
+                <rect class="box-p" x="410" y="330" width="130" height="56" rx="4"/>
+                <text class="b" x="475" y="353" text-anchor="middle">Q4&#8211;Q5</text>
+                <text class="s" x="475" y="372" text-anchor="middle">low-side switch</text>
+                <rect class="box-p" x="550" y="330" width="120" height="56" rx="4"/>
+                <text class="b" x="610" y="353" text-anchor="middle">Q6</text>
+                <text class="s" x="610" y="372" text-anchor="middle">low-side switch</text>
+
+                <!-- Loads -->
+                <path class="w" d="M335 386V430M475 386V430M610 386V430"/>
+                <rect class="box" x="270" y="430" width="130" height="56" rx="4"/>
+                <text x="335" y="453" text-anchor="middle">3 solenoids</text>
+                <text class="s" x="335" y="472" text-anchor="middle">J4&#8211;J6</text>
+                <rect class="box" x="410" y="430" width="130" height="56" rx="4"/>
+                <text x="475" y="453" text-anchor="middle">3-way valve</text>
+                <text class="s" x="475" y="472" text-anchor="middle">J9</text>
+                <rect class="box" x="550" y="430" width="120" height="56" rx="4"/>
+                <text x="610" y="453" text-anchor="middle">Pump</text>
+                <text class="s" x="610" y="472" text-anchor="middle">J7</text>
+
+                <!-- 12 V rail -->
+                <path class="w-p" d="M630 130H702V516H190V386M335 516V486M475 516V486M610 516V486"/>
+                <circle class="dot-p" cx="335" cy="516" r="3.5"/>
+                <circle class="dot-p" cx="475" cy="516" r="3.5"/>
+                <circle class="dot-p" cx="610" cy="516" r="3.5"/>
+                <text class="pw" x="640" y="122">+12 V</text>
+
+                <!-- Legend -->
+                <path class="w-p" d="M16 552H46"/>
+                <text class="s" x="54" y="556">power</text>
+                <path class="w-s" d="M116 552H146"/>
+                <text class="s" x="154" y="556">control signal</text>
+                <path class="w" d="M284 552H314"/>
+                <text class="s" x="322" y="556">switched return</text>
+              </svg>
+            </a>
+            <figcaption><span class="fig-num">Fig. 1</span> How power and control move through the board.</figcaption>
+          </figure>
+        </div>
+
+        <div class="sheet-row reveal">
+          <div class="sheet-text">
+            <h3>Power</h3>
+            <p>The board takes in 24&nbsp;V through a screw terminal and passes it through a fuse before anything else sees it. Two LM2596 buck regulators, a type of switching regulator that steps a voltage down efficiently, turn that into 12&nbsp;V and 5&nbsp;V. The 12&nbsp;V rail runs the actuators and lamps, and the 5&nbsp;V rail runs the Pi and the Nano. Each rail also has its own fuse on the output.</p>
+          </div>
+          <figure class="fig">
+            <a class="fig-zoom" href="../PowerSchematic.png">
+              <img src="../PowerSchematic.png" width="1488" height="1252" loading="lazy" decoding="async" alt="Power schematic: input connector J1 and fuse F1 supply 24 volts to two LM2596 buck regulators, U1 for the 12 volt rail and U2 for the 5 volt rail, each with an inductor, diode, feedback resistors, and output fuse." />
+            </a>
+            <figcaption><span class="fig-num">Fig. 2</span> Power: the 24&nbsp;V input and fuse, and one buck regulator for each rail.</figcaption>
+          </figure>
+        </div>
+
+        <div class="sheet-row img-left reveal">
+          <div class="sheet-text">
+            <h3>MCU headers</h3>
+            <p>This sheet is where the two controllers plug in, the Pi on a 40-pin header and the Nano on two 15-pin sockets. The board powers both of them from its 5&nbsp;V rail, so neither needs its own supply. The Pi runs the solenoid valves, the status LEDs and the lamp signals. The Nano runs the pump and the 3-way valve, and reads the flow meter.</p>
+          </div>
+          <figure class="fig">
+            <a class="fig-zoom" href="../HeadersSchematic.png">
+              <img src="../HeadersSchematic.png" width="1818" height="1028" loading="lazy" decoding="async" alt="MCU headers schematic: the 40-pin Raspberry Pi header J13 in the center with a named net on each used pin, and the Arduino Nano sockets J14 and J15 on either side." />
+            </a>
+            <figcaption><span class="fig-num">Fig. 3</span> MCU headers: the Pi's 40-pin header in the center, with the Nano's two sockets on either side.</figcaption>
+          </figure>
+        </div>
+
+        <div class="sheet-row reveal">
+          <div class="sheet-text">
+            <h3>Switching</h3>
+            <p>A microcontroller pin can't supply the current a solenoid or a pump needs, so six MOSFET switches turn the 12&nbsp;V actuators on and off, and the Pi or the Nano only has to signal each one. Coils don't like having their current cut suddenly, and they answer with a voltage spike that could damage the switch. Each channel has a flyback diode that gives that current a safe path instead. All six channels are the same circuit, so Fig.&nbsp;4 shows just one.</p>
+          </div>
+          <figure class="fig">
+            <a class="fig-zoom" href="../SwitchingMOSFETSchematic.png">
+              <img src="../SwitchingMOSFETSchematic.png" width="1688" height="1068" loading="lazy" decoding="async" alt="One switching channel in the schematic: the VALVE2_CTRL signal drives the gate of MOSFET Q2 through a series resistor, a second resistor pulls the gate to ground, and diode D5 connects the switched output to 12 volts." />
+            </a>
+            <figcaption><span class="fig-num">Fig. 4</span> Switching: one of the six identical channels, Q2, which drives solenoid valve 2.</figcaption>
+          </figure>
+        </div>
+
+        <div class="sheet-row img-left reveal">
+          <div class="sheet-text">
+            <h3>Connectors</h3>
+            <p>Everything that leaves the board goes through this sheet: cables to the lamps, the solenoid valves, the 3-way valve, the pump, the flow meter and the panel LEDs. Each device gets its own connector, so any one of them can be unplugged without disturbing the rest. The lamps do their own power switching internally, so the board only sends them on/off and shutter signals, along with 12&nbsp;V and ground.</p>
+          </div>
+          <figure class="fig">
+            <a class="fig-zoom" href="../ConnectorsSchematic.png">
+              <img src="../ConnectorsSchematic.png" width="1748" height="1190" loading="lazy" decoding="async" alt="Connectors schematic: lamp connectors J2 and J3 on the left with a series resistor on each signal, and connectors J4 through J12 on the right for the solenoids, pump, flow meter, 3-way valve, and panel LEDs." />
+            </a>
+            <figcaption><span class="fig-num">Fig. 5</span> Connectors: the two lamp connectors on the left, and the actuators, flow meter and panel LEDs on the right.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section>
+        <h2>Design process</h2>
+        <p>I drew the schematic in Altium as a hierarchy, with a top sheet linking the four sheets above so that each one could be read and checked on its own. From there I laid the board out on two layers, where the 40-pin header, the Nano sockets and six switching channels all have to route past each other. Then came design checks, and finally a fabrication package with the Gerbers, drill files, BOM and pick-and-place data a manufacturer needs. When I handed it off, the design was complete and packaged for fabrication, pending review by my supervisor.</p>
+
+        <div class="fig-pair reveal">
+          <figure class="fig">
+            <a class="fig-zoom" href="../PCB2D.png">
+              <img src="../img/PCB2D-800.webp" srcset="../img/PCB2D-400.webp 400w, ../img/PCB2D-800.webp 800w" sizes="(min-width: 600px) 400px, 100vw" width="800" height="728" loading="lazy" decoding="async" alt="Two-layer layout of the WATABOT Controller: Raspberry Pi and Arduino Nano sockets on the left, two buck regulators at the upper right, six MOSFET and diode columns across the middle, and connectors along the bottom edge." />
+            </a>
+            <figcaption><span class="fig-num">Fig. 6</span> The finished board layout.</figcaption>
+          </figure>
+          <figure class="fig">
+            <a class="fig-zoom" href="../3d_front.png">
+              <img src="../3d_front.png" width="858" height="757" loading="lazy" decoding="async" alt="3D render of the assembled board, showing the Raspberry Pi and Arduino Nano sockets, electrolytic capacitors, two regulators, six MOSFETs with their diodes, the cartridge fuse holder, and connectors along the bottom edge." />
+            </a>
+            <figcaption><span class="fig-num">Fig. 7</span> 3D render of the assembled board.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+
+
+      <div class="entry-back">
+        <a class="btn btn-ghost" href="../projects.html">&larr; Back to Projects Page</a>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <center><p>© 2025 Bolutife Omole</p></center>
+  </footer>
+
+  <script src="../script.js" defer></script>
+  <script src="../journal.js" defer></script>
+</body>
+</html>

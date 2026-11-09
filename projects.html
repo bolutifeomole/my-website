@@ -6,10 +6,11 @@
     name="viewport"
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   />
-  <title>Journal | Bolutife Omole</title>
+  <title>Projects | Bolutife Omole</title>
   <link rel="icon" href="/favicon.png" type="image/png">
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="journal.css" />
 
   <!-- Non-critical third-party CSS: loaded without blocking first render -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,21 +35,33 @@
     <div class="nav-links" id="primary-nav-links">
       <a class="nav-link" href="index.html#home">Home</a>
       <a class="nav-link" href="index.html#experience">Experience</a>
-      <a class="nav-link" href="journal.html">Journal</a>
+      <a class="nav-link" href="projects.html">Projects</a>
       <a class="nav-link" href="Bolutife%20Omole%20Resume%20-%202026.pdf" target="_blank" rel="noopener">Resume</a>
     </div>
   </nav>
 
   <section id="journal" class="section reveal">
-    <h2>Journal</h2>
-    <div class="section-container">
-      <div class="section-card">
-        <div class="item-head">
-          <h3>Coming soon</h3>
-          <span class="item-meta">TBD</span>
+    <h2>Projects</h2>
+    <div class="entry-list">
+
+      <!-- To add an entry, copy this <article> and put the newest one first. -->
+      <article class="section-card entry-card">
+        <img src="img/PCB2D-800.webp" srcset="img/PCB2D-400.webp 400w, img/PCB2D-800.webp 800w" sizes="(min-width: 640px) 220px, 100vw" width="800" height="728" decoding="async" alt="WATABOT Controller PCB layout" />
+        <div>
+          <div class="item-head">
+            <h3><a href="projects/watabot-controller.html">WATABOT Controller</a></h3>
+            <span class="item-meta">Summer 2026</span>
+          </div>
+          <p class="small">One PCB that replaces a robot's separate control boards and jumper wires, with a Raspberry Pi and an Arduino Nano plugged straight into it.</p>
+          <div class="pills">
+            <span class="pill">PCB Design</span>
+            <span class="pill">Altium</span>
+            <span class="pill">Power Electronics</span>
+            <span class="pill">Embedded</span>
+          </div>
         </div>
-        <p class="small">Addition Coming soon</p>
-      </div>
+      </article>
+
     </div>
   </section>
 

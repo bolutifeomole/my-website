@@ -1,0 +1,190 @@
+/* Styles used only by journal pages. Builds on the variables and components in style.css. */
+
+/* Journal index */
+.entry-list{ width:100%; max-width:var(--container); margin:0 auto; display:grid; gap:1rem; }
+.entry-card{
+  position:relative; display:grid; gap:1.25rem; grid-template-columns:1fr; text-align:left;
+}
+.entry-card img{
+  width:100%; aspect-ratio:800/728; object-fit:cover;
+  border:1px solid var(--border-color); border-radius:var(--radius);
+}
+.entry-card h3 a{ color:inherit; text-decoration:none; }
+.entry-card h3 a::after{ content:""; position:absolute; inset:0; }
+.entry-card:hover h3 a{ color:var(--primary-color); }
+.entry-card h3 a:focus-visible{ outline:none; }
+.entry-card:has(h3 a:focus-visible){ outline:2px solid var(--primary-color); outline-offset:2px; }
+.entry-card .small{ margin:.5rem 0 .85rem; font-size:.94rem; }
+@media (min-width:640px){
+  .entry-card{ grid-template-columns:220px 1fr; align-items:center; }
+}
+
+/* Entry layout */
+.entry{
+  width:100%;
+  padding:clamp(1.5rem,3vw,2.5rem) clamp(1rem,4vw,3rem) 3rem;
+  display:grid; gap:clamp(2.5rem,5vw,4rem); grid-template-columns:minmax(0,1fr);
+}
+.entry section{
+  display:block; min-height:0; max-width:none; padding:0; text-align:left; scroll-snap-align:none;
+}
+
+.entry h1{ margin:.1rem 0 .5rem; }
+.entry h2{ display:flex; margin:0 0 1rem; }
+.entry h3{ margin:0 0 .6rem; }
+.entry .eyebrow{ margin:0; color:var(--primary-color); }
+/* ch is the width of a zero, wider than an average letter: 53ch is about 73 characters of text. */
+.entry p{ color:var(--text-color); margin:0 0 1rem; max-width:53ch; }
+
+/* Zigzag rows: text first in the markup, so it stays first when the row collapses. */
+.sheet-row{
+  --sheet-img:clamp(300px,34vw,480px);
+  display:grid; grid-template-columns:minmax(0,1fr); gap:1.25rem;
+  margin-top:clamp(2.75rem,8vw,3.5rem);
+}
+.sheet-row:first-child{ margin-top:0; }
+.sheet-text > :last-child{ margin-bottom:0; }
+.sheet-row .fig{ width:min(100%,480px); }
+
+@media (min-width:821px){
+  .sheet-row{
+    grid-template-columns:minmax(0,1fr) var(--sheet-img);
+    gap:clamp(2rem,4vw,3.5rem); align-items:center;
+  }
+  .sheet-row.img-left{ grid-template-columns:var(--sheet-img) minmax(0,1fr); }
+  .sheet-row.img-left .sheet-text{ grid-column:2; grid-row:1; }
+  .sheet-row.img-left .fig{ grid-column:1; grid-row:1; }
+
+  /* Uneven spacing between rows */
+  .sheet-row:nth-child(3n){ margin-top:clamp(3.5rem,6vw,5.5rem); }
+  .sheet-row:nth-child(3n+1){ margin-top:clamp(2.5rem,4vw,3.5rem); }
+  .sheet-row:nth-child(3n+2){ margin-top:clamp(4.5rem,8vw,7rem); }
+  .sheet-row:first-child{ margin-top:0; }
+}
+
+/* 2D layout and 3D render, side by side */
+.fig-pair{
+  display:grid; grid-template-columns:minmax(0,1fr); gap:2rem;
+  width:min(100%,480px); margin:2.5rem auto 0;
+}
+@media (min-width:600px){
+  .fig-pair{ grid-template-columns:repeat(2,minmax(0,1fr)); width:min(100%,840px); }
+}
+
+.entry-roles{ display:flex; flex-wrap:wrap; gap:.15rem 1.25rem; margin-bottom:.9rem; }
+.entry-lede{ font-size:clamp(1.02rem,1.6vw,1.12rem); line-height:1.55; }
+.entry .pills{ margin-bottom:1.25rem; }
+
+/* Figures */
+.fig{
+  position:relative; margin:0; padding:.6rem; background:var(--card-color);
+  border:1px solid var(--border-color); border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+/* Copper tape */
+.fig::before{
+  content:""; position:absolute; top:-9px; left:50%; width:72px; height:18px; margin-left:-36px;
+  background:rgba(143,90,18,.34); border-radius:1px;
+  transform:rotate(-2deg); pointer-events:none;
+}
+.img-left .fig::before{ left:42%; transform:rotate(2deg); }
+
+.fig-pair .fig{ --tilt:.7deg; }
+.fig-pair .fig:first-child{ --tilt:-.7deg; }
+.fig-pair .fig:first-child::before{ left:42%; transform:rotate(2deg); }
+.sheet-row .fig{ --tilt:1deg; }
+.sheet-row.img-left .fig{ --tilt:-1deg; }
+
+@media (min-width:821px) and (prefers-reduced-motion:no-preference){
+  .fig{ transform:rotate(var(--tilt,0deg)); transition:transform .25s ease; }
+  .fig:hover, .fig:focus-within{ transform:none; }
+}
+
+.fig-zoom{
+  position:relative; display:flex; min-height:12rem; align-items:center; justify-content:center;
+  background:#fff; border-radius:calc(var(--radius) - 2px); cursor:zoom-in;
+}
+.fig-zoom img{ width:100%; }
+.fig-zoom::after{
+  content:"enlarge"; position:absolute; right:.4rem; bottom:.4rem; padding:.1rem .4rem;
+  font-family:'JetBrains Mono',monospace; font-size:.68rem; color:var(--text-muted);
+  background:rgba(255,255,255,.9); border:1px solid var(--border-color); border-radius:3px;
+}
+.fig-zoom:hover::after{ color:var(--primary-color); border-color:var(--primary-color); }
+.fig-zoom:focus-visible{ outline:2px solid var(--primary-color); outline-offset:2px; }
+
+.fig figcaption{
+  margin-top:.55rem; padding:0 .15rem;
+  font-family:'JetBrains Mono',monospace; font-size:.76rem; line-height:1.5; color:var(--text-muted);
+}
+.fig-num{ color:var(--primary-color); font-weight:600; margin-right:.2rem; }
+
+/* Shown by journal.js when an image file does not exist yet */
+.fig.is-missing{ border:1px dashed var(--primary-color); background:var(--bg-color); }
+.fig-missing{
+  min-height:12rem; display:grid; place-content:center; gap:.3rem; text-align:center; padding:1rem;
+  font-family:'JetBrains Mono',monospace;
+}
+.fig-missing span{ font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); }
+.fig-missing code{ font-size:.9rem; color:var(--primary-color); font-weight:600; }
+
+/* Inline SVG diagram */
+.dgm{ display:block; width:100%; height:auto; }
+
+.dgm text{ font-family:'JetBrains Mono','Inter',monospace; font-size:13px; fill:var(--text-color); }
+.dgm text.s{ font-size:12px; fill:var(--text-muted); }
+.dgm text.b{ font-weight:600; }
+.dgm text.pw{ font-size:12.5px; font-weight:600; fill:var(--primary-color); }
+.dgm text.sg{ font-size:12.5px; font-weight:500; fill:var(--accent-color); }
+.dgm .box{ fill:var(--bg-color); stroke:var(--text-muted); stroke-width:1.2; }
+.dgm .box-p{ fill:#fff; stroke:var(--primary-color); stroke-width:1.5; }
+.dgm .w, .dgm .w-p, .dgm .w-s{ fill:none; stroke-linecap:round; stroke-linejoin:round; }
+.dgm .w{ stroke:var(--text-muted); stroke-width:1.5; }
+.dgm .w-p{ stroke:var(--primary-color); stroke-width:2; }
+.dgm .w-s{ stroke:var(--accent-color); stroke-width:1.7; }
+.dgm .dot-p{ fill:var(--primary-color); }
+.dgm .arrow-s{ fill:var(--accent-color); }
+
+/* Unwritten sections */
+.draft-tag{
+  display:inline-block; padding:.15rem .5rem; border-radius:3px;
+  background:var(--primary-color); color:#fff;
+  font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:600; letter-spacing:.04em;
+}
+.entry-back{ margin-top:.25rem; }
+
+/* Image viewer */
+html.lb-open{ overflow:hidden; }
+.lb{
+  position:fixed; inset:0; width:100%; height:100%; max-width:none; max-height:none;
+  margin:0; padding:0; border:0; background:rgba(20,37,29,.94); color:#fff;
+}
+.lb[open]{ display:grid; grid-template-columns:minmax(0,1fr); grid-template-rows:auto minmax(0,1fr); }
+.lb::backdrop{ background:rgba(20,37,29,.94); }
+.lb-bar{
+  display:flex; align-items:center; gap:.5rem; padding:.5rem .75rem;
+  padding-top:max(.5rem, env(safe-area-inset-top));
+  font-family:'JetBrains Mono',monospace; font-size:.76rem;
+}
+.lb-title{ flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:#d5ddd6; }
+.lb-btn{
+  flex-shrink:0; min-width:40px; height:40px; padding:0 .6rem; cursor:pointer;
+  background:transparent; color:#fff; border:1px solid rgba(255,255,255,.35); border-radius:var(--radius);
+  font-family:'JetBrains Mono',monospace; font-size:.9rem;
+}
+.lb-btn:hover{ border-color:#fff; }
+.lb-btn:focus-visible{ outline:2px solid #fff; outline-offset:1px; }
+.lb-stage{ position:relative; overflow:hidden; touch-action:none; cursor:default; }
+.lb-img{
+  position:absolute; inset:0; margin:auto; background:#fff;
+  width:auto; height:auto; max-width:calc(100% - 1.5rem); max-height:calc(100% - 1.5rem);
+  user-select:none; -webkit-user-drag:none;
+}
+.lb-stage.is-zoomed{ cursor:grab; }
+.lb-stage.is-dragging{ cursor:grabbing; }
+
+@media print{
+  .reveal{ opacity:1 !important; transform:none !important; }
+  .fig{ break-inside:avoid; transform:none; }
+  .fig-zoom::after{ content:none; }
+}
