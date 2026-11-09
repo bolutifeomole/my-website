@@ -8,7 +8,7 @@
   />
   <title>WATABOT Controller | Projects | Bolutife Omole</title>
   <meta name="description" content="A short overview of the WATABOT Controller, one PCB that replaces a robot's separate control boards and jumper wires." />
-  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="icon" href="/img/favicon.png" type="image/png">
 
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="../journal.css" />
@@ -172,8 +172,8 @@
             <p>The board takes in 24&nbsp;V through a screw terminal and passes it through a fuse before anything else sees it. Two LM2596 buck regulators, a type of switching regulator that steps a voltage down efficiently, turn that into 12&nbsp;V and 5&nbsp;V. The 12&nbsp;V rail runs the actuators and lamps, and the 5&nbsp;V rail runs the Pi and the Nano. Each rail also has its own fuse on the output.</p>
           </div>
           <figure class="fig">
-            <a class="fig-zoom" href="../PowerSchematic.png">
-              <img src="../PowerSchematic.png" width="1488" height="1252" loading="lazy" decoding="async" alt="Power schematic: input connector J1 and fuse F1 supply 24 volts to two LM2596 buck regulators, U1 for the 12 volt rail and U2 for the 5 volt rail, each with an inductor, diode, feedback resistors, and output fuse." />
+            <a class="fig-zoom" href="../img/PowerSchematic.png">
+              <img src="../img/PowerSchematic.png" width="1488" height="1252" loading="lazy" decoding="async" alt="Power schematic: input connector J1 and fuse F1 supply 24 volts to two LM2596 buck regulators, U1 for the 12 volt rail and U2 for the 5 volt rail, each with an inductor, diode, feedback resistors, and output fuse." />
             </a>
             <figcaption><span class="fig-num">Fig. 2</span> Power: the 24&nbsp;V input and fuse, and one buck regulator for each rail.</figcaption>
           </figure>
@@ -185,8 +185,8 @@
             <p>This sheet is where the two controllers plug in, the Pi on a 40-pin header and the Nano on two 15-pin sockets. The board powers both of them from its 5&nbsp;V rail, so neither needs its own supply. The Pi runs the solenoid valves, the status LEDs and the lamp signals. The Nano runs the pump and the 3-way valve, and reads the flow meter.</p>
           </div>
           <figure class="fig">
-            <a class="fig-zoom" href="../HeadersSchematic.png">
-              <img src="../HeadersSchematic.png" width="1818" height="1028" loading="lazy" decoding="async" alt="MCU headers schematic: the 40-pin Raspberry Pi header J13 in the center with a named net on each used pin, and the Arduino Nano sockets J14 and J15 on either side." />
+            <a class="fig-zoom" href="../img/HeadersSchematic.png">
+              <img src="../img/HeadersSchematic.png" width="1818" height="1028" loading="lazy" decoding="async" alt="MCU headers schematic: the 40-pin Raspberry Pi header J13 in the center with a named net on each used pin, and the Arduino Nano sockets J14 and J15 on either side." />
             </a>
             <figcaption><span class="fig-num">Fig. 3</span> MCU headers: the Pi's 40-pin header in the center, with the Nano's two sockets on either side.</figcaption>
           </figure>
@@ -198,8 +198,8 @@
             <p>A microcontroller pin can't supply the current a solenoid or a pump needs, so six MOSFET switches turn the 12&nbsp;V actuators on and off, and the Pi or the Nano only has to signal each one. Coils don't like having their current cut suddenly, and they answer with a voltage spike that could damage the switch. Each channel has a flyback diode that gives that current a safe path instead. All six channels are the same circuit, so Fig.&nbsp;4 shows just one.</p>
           </div>
           <figure class="fig">
-            <a class="fig-zoom" href="../SwitchingMOSFETSchematic.png">
-              <img src="../SwitchingMOSFETSchematic.png" width="1688" height="1068" loading="lazy" decoding="async" alt="One switching channel in the schematic: the VALVE2_CTRL signal drives the gate of MOSFET Q2 through a series resistor, a second resistor pulls the gate to ground, and diode D5 connects the switched output to 12 volts." />
+            <a class="fig-zoom" href="../img/SwitchingMOSFETSchematic.png">
+              <img src="../img/SwitchingMOSFETSchematic.png" width="1688" height="1068" loading="lazy" decoding="async" alt="One switching channel in the schematic: the VALVE2_CTRL signal drives the gate of MOSFET Q2 through a series resistor, a second resistor pulls the gate to ground, and diode D5 connects the switched output to 12 volts." />
             </a>
             <figcaption><span class="fig-num">Fig. 4</span> Switching: one of the six identical channels, Q2, which drives solenoid valve 2.</figcaption>
           </figure>
@@ -211,8 +211,8 @@
             <p>Everything that leaves the board goes through this sheet: cables to the lamps, the solenoid valves, the 3-way valve, the pump, the flow meter and the panel LEDs. Each device gets its own connector, so any one of them can be unplugged without disturbing the rest. The lamps do their own power switching internally, so the board only sends them on/off and shutter signals, along with 12&nbsp;V and ground.</p>
           </div>
           <figure class="fig">
-            <a class="fig-zoom" href="../ConnectorsSchematic.png">
-              <img src="../ConnectorsSchematic.png" width="1748" height="1190" loading="lazy" decoding="async" alt="Connectors schematic: lamp connectors J2 and J3 on the left with a series resistor on each signal, and connectors J4 through J12 on the right for the solenoids, pump, flow meter, 3-way valve, and panel LEDs." />
+            <a class="fig-zoom" href="../img/ConnectorsSchematic.png">
+              <img src="../img/ConnectorsSchematic.png" width="1748" height="1190" loading="lazy" decoding="async" alt="Connectors schematic: lamp connectors J2 and J3 on the left with a series resistor on each signal, and connectors J4 through J12 on the right for the solenoids, pump, flow meter, 3-way valve, and panel LEDs." />
             </a>
             <figcaption><span class="fig-num">Fig. 5</span> Connectors: the two lamp connectors on the left, and the actuators, flow meter and panel LEDs on the right.</figcaption>
           </figure>
@@ -225,14 +225,14 @@
 
         <div class="fig-pair reveal">
           <figure class="fig">
-            <a class="fig-zoom" href="../PCB2D.png">
+            <a class="fig-zoom" href="../img/PCB2D.png">
               <img src="../img/PCB2D-800.webp" srcset="../img/PCB2D-400.webp 400w, ../img/PCB2D-800.webp 800w" sizes="(min-width: 600px) 400px, 100vw" width="800" height="728" loading="lazy" decoding="async" alt="Two-layer layout of the WATABOT Controller: Raspberry Pi and Arduino Nano sockets on the left, two buck regulators at the upper right, six MOSFET and diode columns across the middle, and connectors along the bottom edge." />
             </a>
             <figcaption><span class="fig-num">Fig. 6</span> The finished board layout.</figcaption>
           </figure>
           <figure class="fig">
-            <a class="fig-zoom" href="../3d_front.png">
-              <img src="../3d_front.png" width="858" height="757" loading="lazy" decoding="async" alt="3D render of the assembled board, showing the Raspberry Pi and Arduino Nano sockets, electrolytic capacitors, two regulators, six MOSFETs with their diodes, the cartridge fuse holder, and connectors along the bottom edge." />
+            <a class="fig-zoom" href="../img/3d_front.png">
+              <img src="../img/3d_front.png" width="858" height="757" loading="lazy" decoding="async" alt="3D render of the assembled board, showing the Raspberry Pi and Arduino Nano sockets, electrolytic capacitors, two regulators, six MOSFETs with their diodes, the cartridge fuse holder, and connectors along the bottom edge." />
             </a>
             <figcaption><span class="fig-num">Fig. 7</span> 3D render of the assembled board.</figcaption>
           </figure>
